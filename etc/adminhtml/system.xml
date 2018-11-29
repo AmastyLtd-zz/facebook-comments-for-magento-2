@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/system_file.xsd">
+    <system>
+        <section id="amfbreview" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Facebook Reviews</label>
+            <tab>customer</tab>
+            <resource>Amasty_Fbreview::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="appid" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Facebook AppID</label>
+                    <comment>Get at http://www.facebook.com/developers/createapp.php </comment>
+                </field>
+                <field id="title" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Review Title</label>
+                    <comment>Leave empty to use the product page title</comment>
+                </field>
+                <field id="perpage" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Reviews per Page</label>
+                    <comment>Leave empty to use the product page title</comment>
+                </field>
+                <field id="ascending" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Chronological Order</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="display" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Display Options</label>
+                <field id="width" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Block Width (px)</label>
+                </field>
+                <field id="nostyles" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>No Default Styles</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="css" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom CSS</label>
+                </field>
+                <field id="disable_amasty_url" translate="label" type="select" sortOrder="80" showInDefault="0" showInWebsite="1" showInStore="0">
+                    <label>Remove Extension Product Page Link</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="social_login" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Social Login</label>
+                <field id="status" translate="label comment" type="label" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Status</label>
+                    <comment><![CDATA[Provide single-click rapid registration & login process for your customers. See more details <a target="_blank" href="https://amasty.com/social-login-for-magento-2.html?utm_source=extension&utm_medium=backend&utm_campaign=fbreview_to_social_login_m2">here</a>.]]></comment>
+                    <frontend_model>Amasty\Fbreview\Block\Adminhtml\System\Config\SocialLogin</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

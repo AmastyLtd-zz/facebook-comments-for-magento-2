@@ -1,0 +1,52 @@
+<?php
+    use Amasty\Fbreview\Helper\Data;
+
+    /** @var \Amasty\Fbreview\Block\FbList $block */
+?>
+
+<div id="fb-root"></div>
+<script src="//connect.facebook.net/<?= $block->getCurrentLocale(); ?>/all.js#xfbml=1"></script>
+<fb:comments
+        class="fb-comments"
+        href="<?= $block->escapeUrl($block->getCurrentUrl()); ?>"
+        width="<?= $block->getConfigValueByPath(Data::CONFIG_PATH_DISPLAY_WIDTH)?>"
+        simple="<?= $block->getConfigValueByPath(Data::CONFIG_PATH_DISPLAY_NOSTYLES) ? 'true' : 'false' ?>"
+        publish_feed="false"
+    <?php if ($title = $block->getConfigValueByPath(Data::CONFIG_PATH_GENERAL_TITLE)) :?>
+        title="<?= $block->escapeHtml($title)?>"
+        reverse="<?= $block->getConfigValueByPath(Data::CONFIG_PATH_GENERAL_ASCENDING) ? 'true' : 'false' ?>"
+        numposts="<?= $block->getConfigValueByPath(Data::CONFIG_PATH_GENERAL_PERPAGE)?>"
+    <?php endif ?>
+
+    <?php if ($css = $block->getConfigValueByPath(Data::CONFIG_PATH_DISPLAY_CSS)) :?>
+        css="<?= $block->getViewFileUrl("Amasty_Fbreview::css/$css"); ?> ?>"
+    <?php endif ?>
+>
+</fb:comments>
+<script>
+    FB.init({appId  : <?= $block->getConfigValueByPath(Data::CONFIG_PATH_GENERAL_APPID); ?>,
+        cookie : true, xfbml  : true, status : true});
+    <?php if ($block->showAmastyUrl()) : ?>
+    FB.Event.subscribe('xfbml.render', function () {
+        require([
+            'jquery'
+        ], function ($) {
+            if ($('.amasty-advanced-review').length === 0) {
+                $('<a/>', {
+                    target: '_blank',
+                    'class': 'amasty-advanced-review',
+                    href: 'https://amasty.com/advanced-product-reviews-for-magento-2.html',
+                    css: {
+                        position: 'absolute',
+                        color: '#365899',
+                        left: '27px',
+                        bottom: '0',
+                        'font-size': '10px'
+                    },
+                    text: 'Magento 2 review extension'
+                }).appendTo('.fb-comments');
+            }
+        });
+    });
+    <?php endif; ?>
+</script>

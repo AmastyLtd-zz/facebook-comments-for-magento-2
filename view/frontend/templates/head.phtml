@@ -1,0 +1,8 @@
+<?php
+    /** @var \Amasty\Fbreview\Block\FbHead $block */
+    $product = $block->getProduct();
+?>
+
+<?php if ($product) : ?>
+    <meta property="fb:app_id" content="<?= $block->escapeHtml($block->getContent()); ?>" />
+<?php endif ?>
