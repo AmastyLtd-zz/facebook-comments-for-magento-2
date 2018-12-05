@@ -78,6 +78,10 @@ You can customize and preview the chosen comment before sharing.
 * [Magento Google Invisible reCaptcha](https://marketplace.magento.com/amasty-extension-google-invisible-captcha.html)
 * [Magento Out of Stock Notification](https://marketplace.magento.com/amasty-extension-out-of-stock-notification.html)
 
+* [Magento 2 Wishlist Extension](https://github.com/AmastyLtd/wishlist-for-magento-2)
+* [Magento 2 Google Map](https://github.com/AmastyLtd/google-map-for-magento-2)
+* [Magento 2 Promotions Manager](https://github.com/AmastyLtd/promotions-manager-for-magento-2)
+
 * [GDPR for Magento 2](https://amasty.com/gdpr-for-magento-2.html?utm_source=github&utm_medium=link&utm_campaign=listings)
 * [Affiliate for Magento 2](https://amasty.com/affiliate-for-magento-2.html?utm_source=github&utm_medium=link&utm_campaign=listings)
 * [Free Gift for Magento 2](https://amasty.com/free-gift-for-magento-2.html?utm_source=github&utm_medium=link&utm_campaign=listings)
